@@ -143,9 +143,6 @@ public class Game {
 	}
 
 	private boolean isWin() {
-		return secretWord.chars()
-						.mapToObj(x -> (char) x)
-						.collect(Collectors.toSet())
-						.size() == correctLetters.length();
+		return secretWord.chars().distinct().count() == correctLetters.length();
 	}
 }
